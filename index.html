@@ -5,22 +5,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/Assets/style.css">
+    <script src="Assets/index.js" async></script>
     <title>Sign Up</title>
 </head>
 
 <body>
-    <div class="mainright">
-        <img src="/Assets/login.svg" alt="">
-    </div>
-    <div class="mainvoidup">
-        <span>Here</span>
-    </div>
-    <div class="maincontent">
-        <span> Here2</span>
-    </div>
-    <div class="mainbot">
-        <span> Here3</span>
-    </div>
+    <main>
+        <div class="mainright">
+            <div class="image-container">
+                <h1 class="company">Log In<sup>&trade;</sup></h1>
+
+                <label class="switch" onchange="setTheme()">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+
+                <!-- 
+                <button class="theme-toggle">
+                    <span class="sun-icon">
+                        <img src="Assets/sun.svg" alt="sun icon for light mode">
+                    </span>
+                    <span class="moon-icon">
+                        <img src="Assets/moon.svg" alt="moon icon for dark mode">
+                    </span>
+                </button>
+                -->
+
+                <img src="/Assets/Authentication.svg" class="illustration" alt="">
+                <p class="quote">Sign up today to get exciting offers..!</p>
+                <a href="#btm" class="mobile-btm-nav">
+                    <img src="Assets/arrow.svg" alt="">
+                </a>
+            </div>
+        </div>
+        <div class=" mainvoidup"></div>
+        <div class="maincontent">
+            <span> Here2</span>
+        </div>
+        <div class="mainbot"></div>
+    </main>
 </body>
 
 </html>
