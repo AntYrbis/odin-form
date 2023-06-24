@@ -75,9 +75,12 @@ main {
 .mainbot {
     grid-column: 2 / 4;
     grid-row: 4;
+    display: flex;
+    align-items: end;
+    justify-content: center;
 }
 
-/* The switch - the box around the slider */
+/* The slider container */
 .switch input {
     opacity: 0;
     width: 0;
@@ -97,7 +100,6 @@ main {
 }
 
 /* The slider */
-
 #slider {
     position: absolute;
     cursor: pointer;
@@ -175,7 +177,6 @@ input:checked+#slider.light:before {
 }
 
 /* IMAGE ILLUSTRATION SECTION */
-
 .image-container>img {
     width: calc(100%);
 }
@@ -201,12 +202,11 @@ input:checked+#slider.light:before {
     top: 0;
 }
 
-.mobile-btm-nav {
+.mobile-btn-nav {
     display: none;
 }
 
 /* Form set up */
-
 form {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -224,7 +224,7 @@ input {
     padding: 6px 6px 6px 10px;
     margin-top: 5px;
     background-color: var(--light);
-    transition: all .5s ease-in;
+    transition: all .3s ease-in;
 }
 
 input::placeholder {
@@ -274,7 +274,7 @@ input:valid {
     box-shadow: 0 0 10px var(--main-blue);
 }
 
-input:invalid {
+input:invalid:not(:placeholder-shown) {
     font-size: 1em;
     border-radius: 4px;
     color: var(--form-txt);
@@ -282,10 +282,36 @@ input:invalid {
     box-shadow: 0 0 10px var(--error);
 }
 
-/*input::grammar-error {
-    font-size: 1em;
-    border-radius: 4px;
+/* TOP footer */
+#footer_container {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+
+#Footer {
+    border-radius: 10%;
+    border: 0.25vw dotted rgb(187, 127, 17);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.footer_descritption_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer_description {
     color: var(--form-txt);
-    background-color: var(--secondary);
-    box-shadow: 0 0 10px var(--main-blue);
-}*/
+}
+
+#TOP {
+    margin: 0.5vw 0;
+    width: 17vw;
+    display: flex;
+}
