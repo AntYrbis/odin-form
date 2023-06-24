@@ -80,8 +80,17 @@ main {
     justify-content: center;
 }
 
+.image-container {
+    display: grid;
+    height: 100dvh;
+}
+
 #form-title {
     grid-column: 1/3;
+    font-size: 2em;
+    text-align: left;
+    padding: 2% 0 0 5%;
+    color: var(--main-blue);
 }
 
 #btn {
