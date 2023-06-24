@@ -1,3 +1,4 @@
+/* Checking system preference on load */
 window.onload = function () {
     let newTheme = 'light';
     if (matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -7,6 +8,22 @@ window.onload = function () {
     root.className = newTheme;
 };
 
+/* Checking system preference on change*/
+const colorSchemeQueryList = window.matchMedia('(prefers-color-scheme: dark)');
+
+const setColorScheme = e => {
+    let newTheme = 'light';
+    if (e.matches) {
+        newTheme = 'dark';
+    }
+    const root = document.documentElement;
+    root.className = newTheme;
+}
+
+setColorScheme(colorSchemeQueryList);
+colorSchemeQueryList.addEventListener('change', setColorScheme);
+
+/* Setting theme change on toggle switch */
 function setTheme() {
     const root = document.documentElement;
     const newTheme = root.className === 'dark' ? 'light' : 'dark';

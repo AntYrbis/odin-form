@@ -39,10 +39,6 @@
         --light-grey: rgb(189, 189, 190);
         --grey: rgb(135, 135, 136);
     }
-
-    .theme-toggle .sun-icon {
-        display: flex;
-    }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -56,12 +52,6 @@
         --form-txt: rgba(255, 255, 255, .5);
         --light-grey: rgb(105, 105, 105);
         --grey: rgb(68, 68, 68);
-    }
-
-    .theme-toggle .moon-icon {
-        display: flex;
-        width: 10%;
-        opacity: 10%;
     }
 }
 
@@ -120,15 +110,11 @@ main {
 }
 
 /* Toogle Mode */
-.theme-toggle button {
-    background: black;
-    color: white;
-    width: 40px;
-}
-
-.theme-toggle .sun-icon,
-.moon-icon {
-    display: none;
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
 .theme-toggle:hover {
@@ -137,29 +123,19 @@ main {
 
 /* The switch - the box around the slider */
 .switch {
-    position: relative;
-    display: inline-block;
+    position: absolute;
+    top: 2em;
+    left: 25%;
     width: 60px;
     height: 34px;
 }
 
-/* Hide default HTML checkbox */
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
 /* The slider */
-.checkbox {
-    width: 23px;
-    height: 21px;
-    background: transparent url("moon.svg") no-repeat 0 50%
+/* 
+[type="checkbox"] {
+    background: url("moon.svg") no-repeat 80% 50%
 }
-
-.checked {
-    background: transparent url(http://i.stack.imgur.com/S4p2R.png ) no-repeat 80% 50%
-}
+*/
 
 .slider {
     position: absolute;
@@ -168,7 +144,7 @@ main {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: var(--dark-blue);
     -webkit-transition: .4s;
     transition: .4s;
 }
@@ -176,6 +152,8 @@ main {
 .slider:before {
     position: absolute;
     content: "";
+    /*
+    content: url("moon.svg");*/
     height: 26px;
     width: 26px;
     left: 4px;
