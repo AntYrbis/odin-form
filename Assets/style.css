@@ -5,13 +5,13 @@
 /* Variable declaration on root */
 
 :root {
-    --dark-blue: rgb(51, 99, 205);
     --main-blue: rgb(64, 123, 255);
     --light-blue: rgb(216, 228, 255);
     --pale-blue: rgb(237, 242, 254);
 }
 
 :root.light {
+    --dark-blue: rgb(40, 108, 255);
     --txt: white;
     --under-txt: rgba(8, 69, 245, 0.7);
     --form-txt: rgba(255, 255, 255, .5);
@@ -20,6 +20,7 @@
 }
 
 :root.dark {
+    --dark-blue: rgb(51, 99, 205);
     --txt: rgb(29, 43, 58);
     --under-txt: rgba(8, 69, 245, 0.7);
     --form-txt: rgba(255, 255, 255, .5);
@@ -29,7 +30,7 @@
 
 @media (prefers-color-scheme: light) {
     :root {
-        --dark-blue: rgb(51, 99, 205);
+        --dark-blue: rgb(40, 108, 255);
         --main-blue: rgb(64, 123, 255);
         --light-blue: rgb(216, 228, 255);
         --pale-blue: rgb(237, 242, 254);
@@ -109,19 +110,13 @@ main {
     background-color: var(--light-grey);
 }
 
-/* Toogle Mode */
-/* Hide default HTML checkbox */
+/* The switch - the box around the slider */
 .switch input {
     opacity: 0;
     width: 0;
     height: 0;
 }
 
-.theme-toggle:hover {
-    cursor: pointer;
-}
-
-/* The switch - the box around the slider */
 .switch {
     position: absolute;
     top: 2em;
@@ -130,59 +125,85 @@ main {
     height: 34px;
 }
 
-/* The slider */
-/* 
-[type="checkbox"] {
-    background: url("moon.svg") no-repeat 80% 50%
+.theme-toggle:hover {
+    cursor: pointer;
 }
-*/
 
-.slider {
+/* The slider */
+
+#slider {
     position: absolute;
     cursor: pointer;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--dark-blue);
-    -webkit-transition: .4s;
     transition: .4s;
+    border-radius: 34px;
 }
 
-.slider:before {
+/* The two themes */
+#slider.dark {
+    background-color: var(--dark-blue);
+}
+
+#slider.light {
+    background-color: var(--dark-blue);
+}
+
+#slider.dark:before {
+    content: ' ';
+    display: inline-block;
     position: absolute;
-    content: "";
-    /*
-    content: url("moon.svg");*/
+    background: url("moon.svg") no-repeat;
+    background-size: contain;
     height: 26px;
     width: 26px;
     left: 4px;
     bottom: 4px;
-    background-color: white;
+    border-radius: 50%;
     -webkit-transition: .4s;
     transition: .4s;
 }
 
-input:checked+.slider {
-    background-color: #2196F3;
-}
-
-input:focus+.slider {
-    box-shadow: 0 0 1px #2196F3;
-}
-
-input:checked+.slider:before {
+input:checked+#slider.dark:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
+    background: url("sun.svg");
+    background-size: contain;
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    border-radius: 50%;
 }
 
-/* Rounded sliders */
-.slider.round {
-    border-radius: 34px;
+#slider.light:before {
+    content: ' ';
+    display: inline-block;
+    position: absolute;
+    background: url("sun.svg") no-repeat;
+    background-size: contain;
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    border-radius: 50%;
+    -webkit-transition: .4s;
+    transition: .4s;
 }
 
-.slider.round:before {
+input:checked#slider.light:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+    background: url("moon.svg");
+    background-size: contain;
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
     border-radius: 50%;
 }
 

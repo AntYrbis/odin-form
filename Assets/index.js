@@ -6,6 +6,12 @@ window.onload = function () {
     }
     const root = document.documentElement;
     root.className = newTheme;
+
+    const toggle = document.getElementById('slider');
+    toggle.className = newTheme;
+
+    const newimg = "Authentification_" + newTheme;
+    const document.getElementById("imageid").src = newimg;
 };
 
 /* Checking system preference on change*/
