@@ -14,7 +14,6 @@
         <div class="mainright">
             <div class="image-container">
                 <h1 class="company">Log In<sup>&trade;</sup></h1>
-
                 <label class="switch" onchange="setTheme()">
                     <input type="checkbox">
                     <span id="slider"></span>
@@ -28,7 +27,20 @@
         </div>
         <div class=" mainvoidup"></div>
         <div class="maincontent">
-            <span> Here2</span>
+            <form action="" method="post">
+                <input type="text" name="" id="first" placeholder="FIRST NAME" required>
+                <input type="text" name="" id="last" placeholder="LAST NAME" required>
+                <input type="email" name="" id="mail" placeholder="E-MAIL" required>
+                <input type="tel" name="" id="phone" placeholder="PHONE" required>
+                <input type="password" name="" id="password" placeholder="PASSWORD" required>
+                <input type="password" name="" id="confirm" placeholder="CONFIRM PASSWORD" required>
+                <div id="btn">
+                    <button type="submit" class="submit-btn">Create Account</button>
+                    <p class="btn-text">
+                        Already have an account ? <a href="http://" class="btn-text link"> Log in</a>
+                    </p>
+                </div>
+            </form>
         </div>
         <div class="mainbot"></div>
     </main>
