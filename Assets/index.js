@@ -10,8 +10,8 @@ window.onload = function () {
     const toggle = document.getElementById('slider');
     toggle.className = newTheme;
 
-    const newimg = "Authentification_" + newTheme;
-    const document.getElementById("imageid").src = newimg;
+    const newimg = 'Assets/Authentification_' + newTheme + '.svg';
+    document.getElementById("illustration").src = newimg;
 };
 
 /* Checking system preference on change*/
@@ -24,6 +24,12 @@ const setColorScheme = e => {
     }
     const root = document.documentElement;
     root.className = newTheme;
+
+    const toggle = document.getElementById('slider');
+    toggle.className = newTheme;
+
+    const newimg = 'Assets/Authentification_' + newTheme + '.svg';
+    document.getElementById("illustration").src = newimg;
 }
 
 setColorScheme(colorSchemeQueryList);
@@ -34,4 +40,7 @@ function setTheme() {
     const root = document.documentElement;
     const newTheme = root.className === 'dark' ? 'light' : 'dark';
     root.className = newTheme;
+
+    const newimg = 'Assets/Authentification_' + newTheme + '.svg';
+    document.getElementById("illustration").src = newimg;
 }

@@ -2,62 +2,50 @@
 @import url("https://necolas.github.io/normalize.css/8.0.1/normalize.css");
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
 
-/* Variable declaration on root */
-
+/* Variable declaration on root for themes */
 :root {
     --main-blue: rgb(64, 123, 255);
-    --light-blue: rgb(216, 228, 255);
-    --pale-blue: rgb(237, 242, 254);
 }
 
 :root.light {
     --dark-blue: rgb(40, 108, 255);
+    --light: rgb(216, 228, 255);
+    --secondary: rgb(237, 242, 254);
     --txt: white;
-    --under-txt: rgba(8, 69, 245, 0.7);
-    --form-txt: rgba(255, 255, 255, .5);
-    --light-grey: rgb(189, 189, 190);
-    --grey: rgb(135, 135, 136);
+    --form-txt: rgb(64, 123, 255);
 }
 
 :root.dark {
     --dark-blue: rgb(51, 99, 205);
+    --light: rgb(8, 18, 35);
+    --secondary: rgb(6, 12, 25);
     --txt: rgb(29, 43, 58);
-    --under-txt: rgba(8, 69, 245, 0.7);
-    --form-txt: rgba(255, 255, 255, .5);
-    --light-grey: rgb(105, 105, 105);
-    --grey: rgb(68, 68, 68);
+    --form-txt: rgb(159, 177, 216);
 }
 
 @media (prefers-color-scheme: light) {
     :root {
-        --dark-blue: rgb(40, 108, 255);
         --main-blue: rgb(64, 123, 255);
-        --light-blue: rgb(216, 228, 255);
-        --pale-blue: rgb(237, 242, 254);
+        --dark-blue: rgb(40, 108, 255);
+        --light: rgb(216, 228, 255);
+        --secondary: rgb(237, 242, 254);
         --txt: white;
-        --under-txt: rgba(8, 69, 245, 0.7);
-        --form-txt: rgba(255, 255, 255, .5);
-        --light-grey: rgb(189, 189, 190);
-        --grey: rgb(135, 135, 136);
+        --form-txt: rgb(64, 123, 255);
     }
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --dark-blue: rgb(51, 99, 205);
         --main-blue: rgb(64, 123, 255);
-        --light-blue: rgb(216, 228, 255);
-        --pale-blue: rgb(237, 242, 254);
+        --dark-blue: rgb(51, 99, 205);
+        --light: rgb(8, 18, 35);
+        --secondary: rgb(6, 12, 25);
         --txt: rgb(29, 43, 58);
-        --under-txt: rgba(8, 69, 245, 0.7);
-        --form-txt: rgba(255, 255, 255, .5);
-        --light-grey: rgb(105, 105, 105);
-        --grey: rgb(68, 68, 68);
+        --form-txt: rgb(159, 177, 216);
     }
 }
 
 /* Main theme */
-
 * {
     margin: 0;
     padding: 0;
@@ -67,7 +55,7 @@
 }
 
 body {
-    /*overflow: hidden;*/
+    overflow: hidden;
     background-color: var(--grey);
 
 }
@@ -91,14 +79,14 @@ main {
 .mainvoidup {
     grid-column: 2 / 4;
     grid-row: 1;
-    background-color: var(--light-grey);
+    background-color: var(--light);
 }
 
 .maincontent {
     grid-column: 2 / 4;
     grid-row: 2 / 4;
     height: 100%;
-    background-color: var(--grey);
+    background-color: var(--secondary);
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -107,7 +95,7 @@ main {
 .mainbot {
     grid-column: 2 / 4;
     grid-row: 4;
-    background-color: var(--light-grey);
+    background-color: var(--light);
 }
 
 /* The switch - the box around the slider */
@@ -194,7 +182,7 @@ input:checked+#slider.dark:before {
     transition: .4s;
 }
 
-input:checked#slider.light:before {
+input:checked+#slider.light:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
