@@ -498,6 +498,11 @@ input:invalid:not(:placeholder-shown) {
         height: 34px;
     }
 
+    #slider.light {
+        background-color: var(--dark-blue);
+        opacity: 0.7;
+    }
+
     /* Right text */
     .quote{
         width: 100%;
