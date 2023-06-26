@@ -69,14 +69,8 @@ a:hover:not(:has(img))::before{
 a:focus>img,
 a:hover>img {
     background-color: var(--light);
-    opacity: 0.5;
-    border-radius:15px;
-}
-
-a:focus:has(img),
-a:hover:has(img) {
-    border-radius:15px;
-    outline: 3px solid var(--main-blue);
+    border-radius:20px;
+    outline: 2px solid var(--dark-blue);
 }
 
 /* GRID */
