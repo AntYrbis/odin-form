@@ -45,14 +45,14 @@ img{
 }
 
 /* Link styling */
-a:not(:has(img)) {
+a:not(:has(.arrows)):not(:has(img)) {
     position: relative;
     top: 3px;
     border-bottom:solid 3px transparent;
     text-decoration: none;
 }
 
-a:not(:has(img))::before{
+a:not(:has(.arrows)):not(:has(img))::before{
     content: '';
     position: absolute;
     width: 100%;
@@ -64,14 +64,14 @@ a:not(:has(img))::before{
     transition: transform .5s ease-in-out;
 }
 
-a:focus:not(:has(img))::before,
-a:hover:not(:has(img))::before{
+a:focus:not(:has(.arrows)):not(:has(img))::before,
+a:hover:not(:has(.arrows)):not(:has(img))::before{
     transform-origin: left;
     transform: scaleX(1);
 }
 
-a:focus>img,
-a:hover>img {
+a:not(:has(.arrows)):focus>img,
+a:not(:has(.arrows)):hover>img {
     background-color: var(--light);
     border-radius:20px;
     outline: 2px solid var(--dark-blue);
