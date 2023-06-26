@@ -41,13 +41,42 @@ body {
 }
 
 /* Link styling */
-a {
+a:not(:has(img)) {
+    position: relative;
+    top: 3px;
+    border-bottom:solid 3px transparent;
     text-decoration: none;
 }
 
-a:focus,
-a:hover {
-    border-bottom: 1px solid;
+a:not(:has(img))::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    border-bottom: 3px solid;
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s ease-in-out;
+}
+
+a:focus:not(:has(img))::before,
+a:hover:not(:has(img))::before{
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+a:focus>img,
+a:hover>img {
+    background-color: var(--light);
+    opacity: 0.5;
+    border-radius:15px;
+}
+
+a:focus:has(img),
+a:hover:has(img) {
+    border-radius:15px;
+    outline: 3px solid var(--main-blue);
 }
 
 /* GRID */
@@ -154,7 +183,7 @@ main {
     content: ' ';
     display: inline-block;
     position: absolute;
-    background: url("moon.svg") no-repeat;
+    background: url("../Assets/images/moon.svg") no-repeat;
     background-size: contain;
     height: 26px;
     width: 26px;
@@ -169,7 +198,7 @@ input:checked+#slider.dark:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
-    background: url("sun.svg");
+    background: url("../Assets/images/sun.svg");
     background-size: contain;
     height: 26px;
     width: 26px;
@@ -182,7 +211,7 @@ input:checked+#slider.dark:before {
     content: ' ';
     display: inline-block;
     position: absolute;
-    background: url("sun.svg") no-repeat;
+    background: url("../Assets/images/sun.svg") no-repeat;
     background-size: contain;
     height: 26px;
     width: 26px;
@@ -197,7 +226,7 @@ input:checked+#slider.light:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
-    background: url("moon.svg");
+    background: url("../Assets/images/moon.svg");
     background-size: contain;
     height: 26px;
     width: 26px;
@@ -211,6 +240,7 @@ input:checked+#slider.light:before {
     position: relative;
     left: -10%;
     width: calc(120%);
+    max-width: 120%;
 }
 
 .company,
@@ -344,12 +374,12 @@ input:invalid:not(:placeholder-shown) {
     align-items: end;
     justify-content: center;
     background-color: var(--secondary);
-    border-radius: 10%;
+    border-radius: 15px;
     margin: 0.5rem;
 }
 
 #Footer {
-    border-radius: 10%;
+    border-radius: 15px;
     border: 0.25vw dotted rgb(187, 127, 17);
     display: flex;
     align-items: center;
@@ -372,10 +402,12 @@ input:invalid:not(:placeholder-shown) {
 #logo-me {
     position: relative;
     margin: 0.2rem;
-    height: 30px;
+    height: 35px;
+    max-width: 100%;
 }
 
 #TOP {
     width: 17vw;
     display: flex;
+    max-width: 100%;
 }
