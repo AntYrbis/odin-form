@@ -12,6 +12,12 @@ window.onload = function () {
 
     const newimg = './Assets/images/Authentification_' + newTheme + '.svg';
     document.getElementById("illustration").src = newimg;
+
+    const newarrow = './Assets/images/arrow_' + newTheme + '.svg';
+    const arrows = document.getElementsByClassName("arrows");
+    Array.prototype.forEach.call(arrows, function(arrow) {
+        arrow.src = newarrow;
+    });
 };
 
 /* Checking system preference on change*/
@@ -30,6 +36,12 @@ const setColorScheme = e => {
 
     const newimg = './Assets/images/Authentification_' + newTheme + '.svg';
     document.getElementById("illustration").src = newimg;
+
+    const newarrow = './Assets/images/arrow_' + newTheme + '.svg';
+    const arrows = document.getElementsByClassName("arrows");
+    Array.prototype.forEach.call(arrows, function(arrow) {
+        arrow.src = newarrow;
+    });
 }
 
 setColorScheme(colorSchemeQueryList);
@@ -43,4 +55,10 @@ function setTheme() {
 
     const newimg = './Assets/images/Authentification_' + newTheme + '.svg';
     document.getElementById("illustration").src = newimg;
+
+    const newarrow = './Assets/images/arrow_' + newTheme + '.svg';
+    const arrows = document.getElementsByClassName("arrows");
+    Array.prototype.forEach.call(arrows, function(arrow) {
+        arrow.src = newarrow;
+    });
 }
