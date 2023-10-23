@@ -444,7 +444,7 @@ input:invalid:not(:placeholder-shown) {
 
     main {
         display: grid;
-        grid-template-rows: 100dvh minmax(0, 1fr) minmax(0, 1fr)  minmax(0, 1fr)  minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-rows: 100dvh minmax(0, 1fr) minmax(0, 1fr)  minmax(0, 1fr)  minmax(0, 1fr) ;
         grid-template-columns: 100dvw;
         height: 200dvh;
         background-color: var(--light);
